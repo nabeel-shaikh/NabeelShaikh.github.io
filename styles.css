@@ -8,8 +8,8 @@ html {
 /* Fade-in animation */
 .fade-in {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transform: translateY(40px);  /* increase from 20px */
+  transition: opacity 1s ease-out, transform 1s ease-out; /* slower fade */
 }
 
 .fade-in.show {
@@ -27,4 +27,19 @@ nav.scrolled {
 /* Make section transitions feel natural */
 section {
   transition: all 0.4s ease-in-out;
+}
+:root {
+  --accent: #a855f7; /* Tailwind purple-500 */
+}
+
+.text-accent {
+  color: var(--accent);
+}
+
+.bg-accent {
+  background-color: var(--accent);
+}
+
+.bg-accent:hover {
+  background-color: #9333ea; /* purple-600 */
 }
