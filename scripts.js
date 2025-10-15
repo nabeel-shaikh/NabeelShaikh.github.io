@@ -37,9 +37,69 @@ window.addEventListener('scroll', () => {
   });
 
   navLinks.forEach(link => {
-    link.classList.remove('text-cyan-400');
+    link.classList.remove('text-accent');
     if (link.getAttribute('href') === `#${current}`) {
-      link.classList.add('text-cyan-400');
+      link.classList.add('text-accent');
     }
   });
 });
+
+
+
+particlesJS("particles-js", {
+  "particles": {
+    "number": {
+      "value": 800,
+      "density": {
+        "enable": true,
+        "value_area": 2000
+      }
+    },
+    "color": { "value": "#7e22ce" }, // purple
+    "shape": { "type": "circle" },
+    "opacity": {
+      "value": 0.3,
+      "random": false
+    },
+    "size": {
+      "value": 3,
+      "random": true
+    },
+    "line_linked": {
+      "enable": true,         // particles connect to each other
+      "distance": 70,        // slightly larger web distance
+      "color": "#7e22ce",
+      "opacity": 0.25,        // faint base connections
+      "width": 1
+    },
+    "move": {
+      "enable": true,
+      "speed": 0.8,
+      "direction": "none",
+      "random": true,
+      "straight": false,
+      "out_mode": "out"
+    }
+  },
+  "interactivity": {
+    "detect_on": "canvas",
+    "events": {
+      "onhover": {
+        "enable": true,
+        "mode": "repulse"     // ✅ prevents radial pull, keeps natural web
+      },
+      "onclick": {
+        "enable": true
+      },
+      "resize": true
+    },
+    "modes": {
+      "repulse": {
+        "distance": 40,       // subtle push, no collapse toward mouse
+        "duration": 0.4
+      }
+    }
+  },
+  "retina_detect": true
+});
+

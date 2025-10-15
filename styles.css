@@ -1,35 +1,11 @@
-/* ====== CUSTOM CSS for Nabeel Shaikh Portfolio ====== */
-
-/* Smooth scrolling for anchor links */
+/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
 
-/* Fade-in animation */
-.fade-in {
-  opacity: 0;
-  transform: translateY(40px);  /* increase from 20px */
-  transition: opacity 1s ease-out, transform 1s ease-out; /* slower fade */
-}
-
-.fade-in.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Navbar shadow when scrolling */
-nav.scrolled {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-  background-color: rgba(0, 0, 0, 0.9);
-  transition: background-color 0.3s ease;
-}
-
-/* Make section transitions feel natural */
-section {
-  transition: all 0.4s ease-in-out;
-}
+/* Accent purple */
 :root {
-  --accent: #a855f7; /* Tailwind purple-500 */
+  --accent: #7e22ce; /* purple-700 */
 }
 
 .text-accent {
@@ -40,6 +16,47 @@ section {
   background-color: var(--accent);
 }
 
-.bg-accent:hover {
-  background-color: #9333ea; /* purple-600 */
+/* Fade-in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Navbar shadow effect */
+nav.scrolled {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+#particles-js{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index:1;
+    top:10;
+    left:0;
+}
+#home .pointer-events-auto{
+    position: relative;
+    z-index:10;
+}
+#particles-js {
+  background-color: #e0d2d2;
+  position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index:1;
+    top: 0;
+    left: 0;  
+}
+body {
+  color: white;
+  background-color: #dfd3d3;
 }
