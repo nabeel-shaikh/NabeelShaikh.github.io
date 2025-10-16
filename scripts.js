@@ -22,13 +22,13 @@ window.addEventListener('scroll', () => {
 // Particles.js configuration
 particlesJS("particles-js", {
   particles: {
-    number: { value: 1000, density: { enable: true, value_area: 2000 } },
+    number: { value: 1200, density: { enable: true, value_area: 2000 } },
     color: { value: "#7e22ce" },
     shape: { type: "circle" },
     opacity: { value: 0.3, random: false },
     size: { value: 3, random: true },
     line_linked: { enable: true, distance: 70, color: "#7e22ce", opacity: 0.25, width: 1 },
-    move: { enable: true, speed: 0.8, direction: "none", random: true, out_mode: "out" }
+    move: { enable: true, speed: 0.8, direction: "none", random: false, out_mode: "out", bounce: false }
   },
   interactivity: {
     detect_on: "canvas",

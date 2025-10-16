@@ -42,7 +42,7 @@
         Hello, I'm <span class="text-accent">Nabeel Shaikh</span>
       </h2>
       <p class="text-black-700 mb-6 max-w-xl">
-        Computer Science student skilled in Python, JavaScript, SQL, and full-stack development.
+        Junior Software Engineer skilled in Python, JavaScript, SQL, and full-stack development.
       </p>
       <a href="#projects" class="bg-accent text-white px-5 py-3 rounded-lg hover:bg-purple-600 font-medium shadow-md">
         View My Work
@@ -61,11 +61,29 @@
         </p>
 
         <h3 class="text-xl font-semibold text-accent mb-4">Experience</h3>
-        <ul class="text-gray-700 space-y-3 text-sm list-disc list-inside">
-          <li><strong>Database Developer @ Claribase:</strong> Automated Airtable-based client workflows with JavaScript.</li>
-          <li><strong>Data Management Intern @ Thermo Fisher Scientific:</strong> Created SQL-driven data reporting systems and VBA automations.</li>
-          <li><strong>Teaching Assistant @ Wilfrid Laurier University:</strong> Supported students in Python, SQL, and Java development labs.</li>
-        </ul>
+<ul class="text-gray-700 space-y-4 text-sm list-disc list-inside">
+  <li>
+    <strong>Database Developer @ Claribase:</strong> May 2023 – Dec 2024
+    <ul class="list-disc list-inside ml-5 text-gray-600">
+<li>Engineered Airtable automation scripts in JavaScript, leveraging API endpoints and relational schema design to streamline client operations.</li>
+    </ul>
+  </li>
+
+  <li>
+    <strong>Data Management Administrator @ Thermo Fisher:</strong> Sept 2022 – Jan 2023
+    <ul class="list-disc list-inside ml-5 text-gray-600">
+      <li>Built SQL-based reporting systems and automated Excel data pipelines using VBA.</li>
+    </ul>
+  </li>
+
+  <li>
+    <strong>Teaching Assistant @ Wilfrid Laurier University:</strong> Sept 2021 – April 2022
+    <ul class="list-disc list-inside ml-5 text-gray-600">
+      <li>Led lab sessions and supported students in Python, Java, and SQL programming concepts.</li>
+    </ul>
+  </li>
+</ul>
+
       </div>
 
       <div class="lg:w-1/2 flex flex-wrap justify-center gap-6 mt-10 lg:mt-0">
@@ -82,58 +100,77 @@
   </section>
 
   <!-- PROJECTS -->
-  <section id="projects" class="fade-in flex flex-col items-center px-6 py-20 bg-white">
-    <h2 class="text-3xl font-bold mb-10 text-accent">Projects</h2>
-    <div class="max-w-5xl space-y-12">
-      <div class="flex flex-col md:flex-row bg-gray-100 border border-gray-300 rounded-lg overflow-hidden shadow-md">
-        <div class="md:w-1/2">
-          <img src="assets/productivv.png" alt="Productivv" class="w-full h-full object-cover" />
-        </div>
-        <div class="md:w-1/2 p-6 flex flex-col justify-between">
-          <div>
-            <h3 class="text-2xl font-semibold mb-3 text-gray-900">Productivv</h3>
-            <p class="text-gray-700 mb-4">
-              Browser extension that tracks productivity using Python AI and MongoDB.
-            </p>
-            <div class="flex flex-wrap gap-2 mb-4">
-              <span class="tag">React</span>
-              <span class="tag">MongoDB</span>
-              <span class="tag">Python</span>
-              <span class="tag">JavaScript</span>
-            </div>
-          </div>
-          <a href="https://github.com/nabeel-shaikh" target="_blank" class="text-accent font-medium hover:underline">
-            View on GitHub →
-          </a>
-        </div>
-      </div>
+<section id="projects" class="fade-in flex flex-col items-center px-6 py-20 bg-white">
+  <h2 class="text-3xl font-bold mb-10 text-accent">Projects</h2>
 
-      <div class="flex flex-col md:flex-row bg-gray-100 border border-gray-300 rounded-lg overflow-hidden shadow-md">
-        <div class="md:w-1/2">
-          <img src="assets/traffic-simulator.png" alt="AI Traffic Simulator" class="w-full h-full object-cover" />
+  <div class="max-w-5xl space-y-12">
+    
+    <!-- Productivv -->
+    <div class="project-card flex flex-col md:flex-row bg-gray-100 border border-gray-300 rounded-lg overflow-hidden shadow-md h-[420px]">
+      <div class="md:w-1/2">
+        <img src="assets/productivv.png" alt="Productivv" class="w-full h-full object-cover" />
+      </div>
+      <div class="md:w-1/2 p-6 flex flex-col justify-between">
+        <div>
+          <h3 class="text-2xl font-semibold mb-2 text-gray-900">Productivv (WIP)</h3>
+          <p class="text-gray-700 font-medium mb-3">React • Python • MongoDB • JavaScript</p>
+          <ul class="list-disc list-inside text-gray-700 space-y-2 text-sm">
+            <li>Developing a browser extension that uses Python AI and MongoDB to evaluate user productivity.</li>
+            <li>Integrated full-stack architecture with automated data tracking and intuitive UI built in React.</li>
+          </ul>
         </div>
-        <div class="md:w-1/2 p-6 flex flex-col justify-between">
-          <div>
-            <h3 class="text-2xl font-semibold mb-3 text-gray-900">AI Traffic Simulator</h3>
-            <p class="text-gray-700 mb-4">
-              Pygame simulation using reinforcement learning for intelligent traffic light control.
-            </p>
-            <div class="flex flex-wrap gap-2 mb-4">
-              <span class="tag">Python</span>
-              <span class="tag">Pygame</span>
-              <span class="tag">Reinforcement Learning</span>
-            </div>
-          </div>
-          <a href="https://github.com/nabeel-shaikh" target="_blank" class="text-accent font-medium hover:underline">
-            View on GitHub →
-          </a>
+        <a href="https://github.com/nabeel-shaikh/Productivv" target="_blank" class="text-accent font-medium hover:underline">
+          View on GitHub →
+        </a>
+      </div>
+     </div>
+
+    <!-- AI Traffic Simulator -->
+    <div class="project-card flex flex-col md:flex-row bg-gray-100 border border-gray-300 rounded-lg overflow-hidden shadow-md h-[420px]">
+      <div class="md:w-1/2">
+        <img src="assets/traffic-simulator.png" alt="AI Traffic Simulator" class="w-full h-full object-cover" />
+      </div>
+      <div class="md:w-1/2 p-6 flex flex-col justify-between">
+        <div>
+          <h3 class="text-2xl font-semibold mb-2 text-gray-900">AI Traffic Simulator (WIP)</h3>
+          <p class="text-gray-700 font-medium mb-3">Python • Pygame • PyTorch</p>
+          <ul class="list-disc list-inside text-gray-700 space-y-2 text-sm">
+            <li>Building a real-time traffic simulation using object-oriented Python architecture and Pygame.</li>
+            <li>Implementing car movement, traffic light logic, and stop-line detection with AI light control logic.</li>
+          </ul>
         </div>
+        <a href="https://github.com/nabeel-shaikh/AI-Traffic-Simulator" target="_blank" class="text-accent font-medium hover:underline">
+          View on GitHub →
+        </a>
       </div>
     </div>
-  </section>
+
+    <!-- Student Grade Tracker -->
+    <div class="project-card flex flex-col md:flex-row bg-gray-100 border border-gray-300 rounded-lg overflow-hidden shadow-md h-[420px]">
+      <div class="md:w-1/2">
+        <img src="assets/WebServerProject.png" alt="Student Grade Tracker" class="w-full h-full object-cover" />
+      </div>
+      <div class="md:w-1/2 p-6 flex flex-col justify-between">
+        <div>
+          <h3 class="text-2xl font-semibold mb-2 text-gray-900">Student Grade Tracker</h3>
+          <p class="text-gray-700 font-medium mb-3">HTML • CSS • JavaScript • PHP • MySQL</p>
+          <ul class="list-disc list-inside text-gray-700 space-y-2 text-sm">
+            <li>Developed a full-stack web app to track and visualize student grades with secure MySQLi queries.</li>
+            <li>Implemented CRUD functionality using PHP and SQL to improve data retrieval and user experience.</li>
+          </ul>
+        </div>
+        <a href="https://github.com/nabeel-shaikh/CP476-Web-Server-Project-" target="_blank" class="text-accent font-medium hover:underline">
+          View on GitHub →
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
   <!-- CONTACT -->
-  <section id="contact" class="fade-in min-h-screen flex flex-col justify-center items-center bg-gray-50 text-gray-900 px-6 py-20">
+<section id="contact" class="fade-in flex flex-col items-center bg-gray-50 text-gray-900 px-6 py-32">
     <h2 class="text-4xl font-bold mb-10 text-center text-accent">Get In Touch</h2>
     <h3 class="text-2xl font-semibold mb-4">Let's Connect</h3>
     <p class="text-gray-700 mb-10 text-center max-w-md">

@@ -73,3 +73,20 @@ body { background-color: #dfd3d3; color: black; }
   z-index: 10;
 }
 
+.project-card{
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    will-change: transform;
+}
+
+.project-card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 6px 20px rgba(126,34,206,0.25);
+}
+
+.project-card:hover img{
+    transform:scale(1.02);
+    transition: transform 0.2s ease;
+}
+.project-card img{
+    transition: transform 0.2s ease;
+}
