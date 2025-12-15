@@ -57,49 +57,131 @@
     <div class="flex flex-col lg:flex-row items-start justify-center w-full max-w-6xl gap-12">
       <div class="lg:w-1/2">
         <p class="text-gray-800 mb-6 leading-relaxed">
-          I'm a recent graduate from Wilfrid Laurier University with a BSc in Computer Science. I have hands-on experience in full-stack web development, data management, and automation. I'm passionate about building efficient, user-friendly applications and continuously learning new technologies to enhance my skill set. I am currently seeking full-time opportunities in software development where I can contribute my skills and grow professionally.
+          Computer Science graduate with strong foundations in algorithms, data structures, and backend engineering. 
+          Experienced in Python, SQL, and JavaScript, with a focus on building reliable software systems, designing 
+          scalable database architectures, and solving complex engineering problems. Seeking full-time software engineering 
+          opportunities to contribute to high-quality backend and full-stack development.
         </p>
 
         <h3 class="text-xl font-semibold text-accent mb-4">Experience</h3>
 <ul class="text-gray-700 space-y-4 text-sm list-disc list-inside">
   <li>
-    <strong>Currently Seeking Full-Time Opportunities in Software Development</strong>
-  </li>
-
-  <li>
     <strong>Database Developer @ Claribase:</strong> May 2023 – Dec 2024
     <ul class="list-disc list-inside ml-5 text-gray-600">
-<li>Engineered Airtable automation scripts in JavaScript, leveraging API endpoints and relational schema design to streamline client operations.</li>
+      <li>Built backend features using AirTable's JavaScript environment and React-based Blocks SDK, developing custom extensions and data-driven components that enhanced platform functionality.</li>
+      <li>Designed scalable database schemas and improved system performance by optimizing data access patterns across high-volume AirTable bases.</li>
     </ul>
   </li>
 
   <li>
-    <strong>Data Management Administrator @ Thermo Fisher:</strong> Sept 2022 – Jan 2023
+    <strong>Database Administrator Intern @ Thermo Fisher Scientific:</strong> Sept 2022 – Dec 2022
     <ul class="list-disc list-inside ml-5 text-gray-600">
-      <li>Built SQL-based reporting systems and automated Excel data pipelines using VBA.</li>
+      <li>Developed SQL workflows and reporting logic to support internal analytics and operational tooling.</li>
+      <li>Automated data processing using VBA and SQL, improving data accuracy and reducing repetitive engineering effort.</li>
     </ul>
   </li>
 
   <li>
-    <strong>Teaching Assistant @ Wilfrid Laurier University:</strong> Sept 2021 – April 2022
+    <strong>Teaching Assistant @ Wilfrid Laurier University:</strong> Sept 2021 – Apr 2022
     <ul class="list-disc list-inside ml-5 text-gray-600">
-      <li>Led lab sessions and supported students in Python, Java, and SQL programming concepts.</li>
+      <li>Taught core CS fundamentals including algorithms, data structures, and object-oriented programming in Python and Java.</li>
+      <li>Debugged student code, explained algorithmic complexity, and mentored 30+ students on software engineering best practices.</li>
     </ul>
   </li>
 </ul>
 
       </div>
 
-      <div class="lg:w-1/2 flex flex-wrap justify-center gap-6 mt-10 lg:mt-0">
-        <div class="skill-card"><i class="devicon-html5-plain colored text-6xl"></i><p>HTML</p></div>
-        <div class="skill-card"><i class="devicon-css3-plain colored text-6xl"></i><p>CSS</p></div>
-        <div class="skill-card"><i class="devicon-javascript-plain colored text-6xl"></i><p>JavaScript</p></div>
-        <div class="skill-card"><i class="devicon-react-original colored text-6xl"></i><p>React</p></div>
-        <div class="skill-card"><i class="devicon-python-plain colored text-6xl"></i><p>Python</p></div>
-        <div class="skill-card"><i class="devicon-java-plain colored text-6xl"></i><p>Java</p></div>
-        <div class="skill-card"><i class="devicon-mongodb-plain colored text-6xl"></i><p>MongoDB</p></div>
-        <div class="skill-card"><i class="devicon-git-plain colored text-6xl"></i><p>Git</p></div>
-        <div class="skill-card"><i class="devicon-amazonwebservices-plain colored text-6xl"></i><p>AWS</p></div>
+      <div class="lg:w-1/2 mt-10 lg:mt-0">
+        <!-- Skills Carousel -->
+        <div class="skills-carousel-container">
+          <h3 class="text-xl font-semibold text-accent mb-6 text-center">Skills & Technologies</h3>
+          
+          <div class="skills-carousel-wrapper">
+            <!-- Left Arrow -->
+            <button class="carousel-nav-btn carousel-nav-left" id="carouselPrev" aria-label="Previous category">
+              <i data-lucide="chevron-left"></i>
+            </button>
+            
+            <!-- Carousel Card -->
+            <div class="skills-carousel-card">
+              <div class="carousel-slide" id="carouselSlide">
+                <!-- Programming Languages -->
+                <div class="carousel-category active" data-category="0">
+                  <div class="category-header">
+                    <h4 class="category-title">Programming Languages</h4>
+                  </div>
+                  <div class="skills-grid">
+                    <div class="skill-item-carousel"><i class="devicon-python-plain colored text-5xl"></i><p>Python</p></div>
+                    <div class="skill-item-carousel"><i class="devicon-javascript-plain colored text-5xl"></i><p>JavaScript</p></div>
+                    <div class="skill-item-carousel"><i class="devicon-java-plain colored text-5xl"></i><p>Java</p></div>
+                    <div class="skill-item-carousel"><i class="devicon-mysql-plain colored text-5xl"></i><p>SQL</p></div>
+                    <div class="skill-item-carousel"><i class="devicon-html5-plain colored text-5xl"></i><p>HTML</p></div>
+                    <div class="skill-item-carousel"><i class="devicon-css3-plain colored text-5xl"></i><p>CSS</p></div>
+                    <div class="skill-item-carousel"><i class="devicon-cplusplus-plain colored text-5xl"></i><p>C++</p></div>
+                    <div class="skill-item-carousel"><i class="devicon-php-plain colored text-5xl"></i><p>PHP</p></div>
+                    <div class="skill-item-carousel"><i class="devicon-visualstudio-plain colored text-5xl"></i><p>VBA</p></div>
+                  </div>
+                </div>
+                
+                <!-- Frameworks & Libraries -->
+                <div class="carousel-category" data-category="1">
+                  <div class="category-header">
+                    <h4 class="category-title">Frameworks & Libraries</h4>
+                  </div>
+                  <div class="skills-grid">
+                    <div class="skill-item-carousel"><i class="devicon-react-original colored text-5xl"></i><p>React</p></div>
+                    <div class="skill-item-carousel"><i class="devicon-nodejs-plain colored text-5xl"></i><p>Node.js</p></div>
+                    <div class="skill-item-carousel"><i class="devicon-express-original colored text-5xl"></i><p>Express</p></div>
+                    <div class="skill-item-carousel"><i class="devicon-typescript-plain colored text-5xl"></i><p>TypeScript</p></div>
+                    <div class="skill-item-carousel"><i class="devicon-tailwindcss-plain colored text-5xl"></i><p>Tailwind CSS</p></div>
+                    <div class="skill-item-carousel"><i class="devicon-react-original colored text-5xl"></i><p>AirTable Blocks SDK</p></div>
+                  </div>
+                </div>
+                
+                <!-- Databases -->
+                <div class="carousel-category" data-category="2">
+                  <div class="category-header">
+                    <h4 class="category-title">Databases</h4>
+                  </div>
+                  <div class="skills-grid">
+                    <div class="skill-item-carousel"><i class="devicon-mysql-plain colored text-5xl"></i><p>MySQL</p></div>
+                    <div class="skill-item-carousel"><i class="devicon-mongodb-plain colored text-5xl"></i><p>MongoDB</p></div>
+                    <div class="skill-item-carousel"><i class="devicon-postgresql-plain colored text-5xl"></i><p>PostgreSQL</p></div>
+                    <div class="skill-item-carousel"><i class="devicon-sqlite-plain colored text-5xl"></i><p>SQLite</p></div>
+                  </div>
+                </div>
+                
+                <!-- Cloud & DevOps -->
+                <div class="carousel-category" data-category="3">
+                  <div class="category-header">
+                    <h4 class="category-title">Cloud & DevOps</h4>
+                  </div>
+                  <div class="skills-grid">
+                    <div class="skill-item-carousel"><i class="devicon-amazonwebservices-plain colored text-5xl"></i><p>AWS</p></div>
+                    <div class="skill-item-carousel"><i class="devicon-docker-plain colored text-5xl"></i><p>Docker</p></div>
+                    <div class="skill-item-carousel"><i class="devicon-kubernetes-plain colored text-5xl"></i><p>Kubernetes</p></div>
+                    <div class="skill-item-carousel"><i class="devicon-git-plain colored text-5xl"></i><p>Git</p></div>
+                    <div class="skill-item-carousel"><i class="devicon-github-plain colored text-5xl"></i><p>GitHub</p></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Right Arrow -->
+            <button class="carousel-nav-btn carousel-nav-right" id="carouselNext" aria-label="Next category">
+              <i data-lucide="chevron-right"></i>
+            </button>
+          </div>
+          
+          <!-- Pagination Dots -->
+          <div class="carousel-pagination" id="carouselPagination">
+            <span class="pagination-dot active" data-index="0"></span>
+            <span class="pagination-dot" data-index="1"></span>
+            <span class="pagination-dot" data-index="2"></span>
+            <span class="pagination-dot" data-index="3"></span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -129,7 +211,7 @@
         </a>
       </div>
     </div>
-
+    
     <!-- Productivv -->
     <div class="project-card flex flex-col md:flex-row bg-gray-100 border border-gray-300 rounded-lg overflow-hidden shadow-md h-full">
       <div class="md:w-1/2 h-48 md:h-full overflow-hidden">

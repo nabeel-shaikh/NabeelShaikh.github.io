@@ -90,3 +90,226 @@ body { background-color: #dfd3d3; color: black; }
 .project-card img{
     transition: transform 0.2s ease;
 }
+
+/* Skills Carousel Styles */
+.skills-carousel-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.skills-carousel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.skills-carousel-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  min-height: 400px;
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-category {
+  display: none;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.carousel-category.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0;
+}
+
+.category-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.skill-item-carousel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 110px;
+  height: 110px;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  background-clip: padding-box;
+  position: relative;
+  background-color: rgba(255, 232, 232, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.skill-item-carousel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  padding: 2px;
+  background: linear-gradient(45deg, #7e22ce, #ec4899);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.skill-item-carousel:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(126, 34, 206, 0.3);
+}
+
+.skill-item-carousel p {
+  margin-top: 8px;
+  color: #7e22ce;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+.skill-item-carousel i {
+  transition: transform 0.3s ease;
+}
+
+.skill-item-carousel:hover i {
+  transform: scale(1.1);
+}
+
+.carousel-nav-btn {
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #9ca3af;
+  flex-shrink: 0;
+  position: relative;
+  box-shadow: none;
+}
+
+.carousel-nav-btn:hover {
+  background: rgba(126, 34, 206, 0.15);
+  border: 1.5px solid var(--accent);
+  transform: scale(1.05);
+  box-shadow: 0 2px 8px rgba(126, 34, 206, 0.2);
+}
+
+.carousel-nav-btn:active {
+  transform: scale(0.95);
+}
+
+.carousel-nav-btn svg {
+  width: 24px;
+  height: 24px;
+  stroke: #9ca3af;
+  stroke-width: 2.5;
+  z-index: 1;
+  position: relative;
+}
+
+.carousel-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.pagination-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #d1d5db;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.pagination-dot.active {
+  background: var(--accent);
+  width: 28px;
+  border-radius: 5px;
+  border-color: var(--accent);
+}
+
+.pagination-dot:hover {
+  background: rgba(126, 34, 206, 0.6);
+  border-color: var(--accent);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .skills-carousel-card {
+    padding: 1.5rem;
+    min-height: 360px;
+  }
+  
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+  
+  .skill-item-carousel {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .skill-item-carousel p {
+    font-size: 0.65rem;
+  }
+  
+  .carousel-nav-btn {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .carousel-nav-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+}
