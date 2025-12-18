@@ -4,23 +4,63 @@ html { scroll-behavior: smooth; }
 .text-accent { color: var(--accent); }
 .bg-accent { background-color: var(--accent); }
 
-.fade-in { opacity: 0; transform: translateY(40px); transition: opacity 1s ease-out, transform 1s ease-out; }
-.fade-in.show { opacity: 1; transform: translateY(0); }
+/* Animation Classes */
+.fade-in { 
+  opacity: 0; 
+  transform: translateY(30px); 
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out; 
+}
+.fade-in.show { 
+  opacity: 1; 
+  transform: translateY(0); 
+}
 
+/* Navbar */
 nav.scrolled {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  background-color: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
   transition: all 0.3s ease;
 }
 
-body { background-color: #dfd3d3; color: black; }
+.nav-link {
+  position: relative;
+  color: #374151;
+  transition: color 0.3s ease;
+}
 
+.nav-link:hover {
+  color: var(--accent);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--accent);
+  transition: width 0.3s ease-out;
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+  width: 100%;
+}
+
+body { 
+  background-color: #f9fafb; 
+  color: #1f2937; 
+  font-family: 'Inter', sans-serif; 
+}
+
+/* Component Styles */
 .skill-card {
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   width: 130px; height: 130px;
   border: 2px solid transparent; border-radius: 12px;
   background-clip: padding-box; position: relative;
-  background-color: rgba(255, 232, 232, 0.05);
+  background-color: rgba(255, 255, 255, 0.5);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .skill-card::before {
@@ -35,24 +75,28 @@ body { background-color: #dfd3d3; color: black; }
 
 .contact-card {
   display: block; background-color: #fff; border: 1px solid #e5e7eb;
-  padding: 1rem 1.25rem; border-radius: 0.75rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem; border-radius: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; 
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
 }
-.contact-card:hover { transform: translateY(-3px); box-shadow: 0 4px 12px rgba(126, 34, 206, 0.15); border-color: var(--accent); }
+.contact-card:hover { 
+  transform: translateY(-3px); 
+  box-shadow: 0 10px 25px rgba(126, 34, 206, 0.1); 
+  border-color: var(--accent); 
+}
 
 .icon-circle {
   background-color: #f3f4f6; border-radius: 50%;
-  width: 45px; height: 45px; display: flex; align-items: center; justify-content: center;
+  width: 48px; height: 48px; display: flex; align-items: center; justify-content: center;
+  transition: background-color 0.3s ease;
 }
-.icon-circle svg { width: 24px; height: 24px; stroke: var(--accent); stroke-width: 2.2; transition: all 0.3s ease; }
-.contact-card:hover .icon-circle svg { transform: scale(1.15); stroke: var(--accent); }
+.contact-card:hover .icon-circle { background-color: rgba(126, 34, 206, 0.1); }
+.icon-circle svg { width: 24px; height: 24px; stroke: var(--accent); stroke-width: 2; transition: all 0.3s ease; }
+.contact-card:hover .icon-circle svg { transform: scale(1.1); }
 
 #particles-js {
-  position: absolute;   /* stays only inside #home */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
   z-index: 1;
   background: transparent;
 }
@@ -66,6 +110,7 @@ body { background-color: #dfd3d3; color: black; }
   align-items: center;
   text-align: center;
   overflow: hidden;
+  background: linear-gradient(to bottom, #ffffff, #f3f4f6);
 }
 
 #home .pointer-events-auto {
@@ -73,22 +118,24 @@ body { background-color: #dfd3d3; color: black; }
   z-index: 10;
 }
 
-.project-card{
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    will-change: transform;
+/* Project Card Styles */
+.project-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: white;
+  border: 1px solid #e5e7eb;
 }
 
-.project-card:hover{
-    transform: translateY(-8px);
-    box-shadow: 0 6px 20px rgba(126,34,206,0.25);
+.project-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 20px 25px -5px rgba(126, 34, 206, 0.1), 0 10px 10px -5px rgba(126, 34, 206, 0.04);
+  border-color: rgba(126, 34, 206, 0.3);
 }
 
-.project-card:hover img{
-    transform:scale(1.02);
-    transition: transform 0.2s ease;
+.project-card img {
+  transition: transform 0.5s ease;
 }
-.project-card img{
-    transition: transform 0.2s ease;
+.project-card:hover img {
+  transform: scale(1.05);
 }
 
 /* Skills Carousel Styles */
@@ -109,19 +156,21 @@ body { background-color: #dfd3d3; color: black; }
 .skills-carousel-card {
   background: #ffffff;
   border-radius: 16px;
-  padding: 2rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  min-height: 400px;
-  width: 100%;
-  max-width: 500px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  height: 480px;
+  width: 420px;
   position: relative;
   overflow: hidden;
+  border: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
 }
 
 .carousel-slide {
   position: relative;
   width: 100%;
-  height: 100%;
+  flex-grow: 1;
 }
 
 .carousel-category {
@@ -134,33 +183,31 @@ body { background-color: #dfd3d3; color: black; }
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateX(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
 .category-header {
   display: flex;
   align-items: center;
-  margin-bottom: 1.5rem;
-  padding-bottom: 0;
+  justify-content: center;
+  margin-bottom: 2rem;
 }
 
 .category-title {
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-size: 1.5rem;
+  font-weight: 700;
   color: var(--accent);
+  text-align: center;
 }
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
+  grid-template-columns: repeat(3, 90px);
+  gap: 1.25rem;
+  justify-content: center;
+  align-content: start;
+  padding: 0.5rem;
 }
 
 .skill-item-carousel {
@@ -168,60 +215,56 @@ body { background-color: #dfd3d3; color: black; }
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 110px;
-  height: 110px;
-  border: 2px solid transparent;
+  width: 90px;
+  height: 90px;
+  border: 1px solid transparent;
   border-radius: 12px;
   background-clip: padding-box;
   position: relative;
-  background-color: rgba(255, 232, 232, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #ffffff;
+  transition: all 0.3s ease;
   cursor: pointer;
-}
-
-.skill-item-carousel::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 12px;
-  padding: 2px;
-  background: linear-gradient(45deg, #7e22ce, #ec4899);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
-}
-
-.skill-item-carousel:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 15px rgba(126, 34, 206, 0.3);
-}
-
-.skill-item-carousel p {
-  margin-top: 8px;
-  color: #7e22ce;
-  font-weight: 600;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 .skill-item-carousel i {
-  transition: transform 0.3s ease;
+  font-size: 2rem !important;
 }
 
-.skill-item-carousel:hover i {
-  transform: scale(1.1);
+.skill-item-carousel p {
+  margin-top: 6px;
+  color: #4b5563;
+  font-weight: 600;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-align: center;
+  transition: color 0.3s;
+}
+
+/* Experience Reveal Animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Experience Timeline Specifics */
+.experience-item {
+  margin-bottom: 2rem;
 }
 
 .carousel-nav-btn {
   background: transparent;
   border: none;
   border-radius: 50%;
-  width: 44px;
-  height: 44px;
+  width: 48px;
+  height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -230,77 +273,67 @@ body { background-color: #dfd3d3; color: black; }
   color: #9ca3af;
   flex-shrink: 0;
   position: relative;
-  box-shadow: none;
 }
 
 .carousel-nav-btn:hover {
-  background: rgba(126, 34, 206, 0.15);
-  border: 1.5px solid var(--accent);
-  transform: scale(1.05);
-  box-shadow: 0 2px 8px rgba(126, 34, 206, 0.2);
+  background: rgba(126, 34, 206, 0.1);
+  color: var(--accent);
+  transform: scale(1.1);
 }
-
-.carousel-nav-btn:active {
-  transform: scale(0.95);
-}
-
 .carousel-nav-btn svg {
-  width: 24px;
-  height: 24px;
-  stroke: #9ca3af;
+  width: 28px;
+  height: 28px;
   stroke-width: 2.5;
-  z-index: 1;
-  position: relative;
 }
 
 .carousel-pagination {
   display: flex;
   justify-content: center;
   gap: 0.75rem;
-  margin-top: 1.5rem;
+  margin-top: 2rem;
 }
 
 .pagination-dot {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: #d1d5db;
+  background: #e5e7eb;
   cursor: pointer;
   transition: all 0.3s ease;
-  border: 2px solid transparent;
 }
 
 .pagination-dot.active {
   background: var(--accent);
-  width: 28px;
+  width: 30px;
   border-radius: 5px;
-  border-color: var(--accent);
 }
-
 .pagination-dot:hover {
-  background: rgba(126, 34, 206, 0.6);
-  border-color: var(--accent);
+  background: rgba(126, 34, 206, 0.5);
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .skills-carousel-card {
     padding: 1.5rem;
-    min-height: 360px;
+    height: auto;
+    min-height: 380px;
+    width: 100%;
+    max-width: 320px;
   }
   
   .skills-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.75rem;
+    grid-template-columns: repeat(2, 80px);
+    gap: 1rem;
+    justify-content: center;
   }
   
   .skill-item-carousel {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
   }
   
   .skill-item-carousel p {
-    font-size: 0.65rem;
+    font-size: 0.55rem;
   }
   
   .carousel-nav-btn {
