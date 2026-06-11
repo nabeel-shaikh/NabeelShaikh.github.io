@@ -93,6 +93,8 @@ body {
 .contact-card:hover .icon-circle { background-color: rgba(126, 34, 206, 0.1); }
 .icon-circle svg { width: 24px; height: 24px; stroke: var(--accent); stroke-width: 2; transition: all 0.3s ease; }
 .contact-card:hover .icon-circle svg { transform: scale(1.1); }
+.icon-circle i { color: var(--accent); transition: all 0.3s ease; }
+.contact-card:hover .icon-circle i { transform: scale(1.1); }
 
 #particles-js {
   position: absolute;
