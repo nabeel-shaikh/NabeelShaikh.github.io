@@ -21,13 +21,14 @@
 
 <body class="bg-gray-50 text-gray-900 font-sans">
   <!-- NAVBAR -->
-  <nav id="navbar" class="bg-white/90 backdrop-blur-md fixed w-full z-50 shadow-sm transition-all duration-300">
+  <nav id="navbar" class="bg-white/90 backdrop-blur-md fixed w-full z-50 shadow-sm transition-all duration-300" aria-label="Main navigation">
     <div class="max-w-5xl mx-auto flex justify-between items-center px-6 py-3">
       <div class="font-bold text-xl text-gray-900 tracking-tight">NS</div>
       <ul class="flex space-x-8 text-sm font-medium">
         <li><a href="#home" class="nav-link">Home</a></li>
         <li><a href="#about" class="nav-link">About</a></li>
         <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
         <li><a href="#projects" class="nav-link">Projects</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
         <li><a href="#resume" class="nav-link">Resume</a></li>
@@ -43,8 +44,9 @@
       <h1 class="text-5xl md:text-6xl font-bold mb-6 text-gray-900 leading-tight">
         Hey! I'm <span class="text-accent">Nabeel Shaikh</span>
       </h1>
+      <p class="text-xl md:text-2xl font-medium text-accent h-8 mb-6"><span id="typewriter"></span><span class="typewriter-cursor">|</span></p>
       <p class="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
-        A Software Engineer specializing in full-stack development, scalable backend systems, and data-driven applications.
+        A Software Engineer building full-stack products and enterprise Airtable extensions. React, TypeScript, and data-driven systems.
       </p>
       <div class="flex gap-4 justify-center">
         <a href="#projects" class="bg-accent text-white px-6 py-3 rounded-lg hover:bg-purple-700 font-medium shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
@@ -52,6 +54,80 @@
         </a>
         <a href="#contact" class="bg-white text-gray-800 border border-gray-200 px-6 py-3 rounded-lg hover:border-accent hover:text-accent font-medium shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
           Contact Me
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- AT A GLANCE -->
+  <section id="glance" class="fade-in py-16 bg-white">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[minmax(120px,auto)]">
+        <!-- Now building -->
+        <div class="bento-tile col-span-2 row-span-2 bg-gradient-to-br from-purple-600 to-purple-800 text-white relative">
+          <i data-lucide="zap" class="absolute top-4 right-4 w-5 h-5 opacity-80"></i>
+          <span class="bento-label text-purple-200">Currently</span>
+          <div>
+            <h3 class="text-xl font-bold mb-2">Enterprise Airtable extension for 5,000+ users</h3>
+            <p class="text-sm text-purple-100">React · TypeScript · Airtable Blocks SDK — at All &amp; Sundry</p>
+          </div>
+        </div>
+
+        <!-- Role -->
+        <div class="bento-tile col-span-2 md:col-span-1">
+          <span class="bento-label">Role</span>
+          <div>
+            <p class="font-bold text-gray-900">React &amp; Airtable Developer</p>
+            <p class="text-sm text-gray-500">All &amp; Sundry</p>
+          </div>
+        </div>
+
+        <!-- Location -->
+        <div class="bento-tile col-span-1">
+          <span class="bento-label">Based in</span>
+          <div class="flex items-end justify-between">
+            <p class="font-bold text-gray-900">Greater Toronto Area</p>
+            <i data-lucide="map-pin" class="w-4 h-4 text-accent"></i>
+          </div>
+        </div>
+
+        <!-- Certifications -->
+        <div class="bento-tile col-span-2 md:col-span-1">
+          <span class="bento-label">Certified</span>
+          <div>
+            <p class="font-bold text-gray-900">Airtable Builder</p>
+            <p class="text-sm text-gray-500 flex items-center gap-1.5">
+              <span class="inline-block w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span>
+              Admin — in progress
+            </p>
+          </div>
+        </div>
+
+        <!-- GitHub -->
+        <a href="https://github.com/nabeel-shaikh" target="_blank" rel="noopener noreferrer" class="bento-tile col-span-1 hover:no-underline" aria-label="GitHub profile @nabeel-shaikh">
+          <span class="bento-label">GitHub</span>
+          <div class="flex items-end justify-between">
+            <p class="font-bold text-gray-900">@nabeel-shaikh</p>
+            <i class="devicon-github-original text-xl"></i>
+          </div>
+        </a>
+
+        <!-- Education -->
+        <div class="bento-tile col-span-2 md:col-span-2">
+          <span class="bento-label">Education</span>
+          <div>
+            <p class="font-bold text-gray-900">BSc Computer Science</p>
+            <p class="text-sm text-gray-500">Wilfrid Laurier · UX Design minor</p>
+          </div>
+        </div>
+
+        <!-- Open to -->
+        <a href="#contact" class="bento-tile col-span-2 md:col-span-2 hover:no-underline" aria-label="Get in touch">
+          <span class="bento-label">Open to</span>
+          <div class="flex items-end justify-between">
+            <p class="font-bold text-gray-900">Engineering roles &amp; Airtable projects</p>
+            <i data-lucide="arrow-right" class="w-4 h-4 text-accent"></i>
+          </div>
         </a>
       </div>
     </div>
@@ -66,98 +142,67 @@
         <div class="lg:w-1/2 space-y-8">
           <div class="prose prose-lg text-gray-700 leading-relaxed">
             <p>
-              I am a Computer Science graduate from Wilfrid Laurier University with a focus on systems architecture and backend development. I enjoy diving into the technical details of how complex systems work, particularly when working with Python, SQL, and JavaScript to build scalable backend infrastructures.
+              I'm a Computer Science graduate from Wilfrid Laurier University (with a minor in UX Design) currently working as a React &amp; Airtable Developer at All &amp; Sundry, where I'm building one of the first enterprise full-stack Airtable extensions — serving 5,000+ product and project managers.
             </p>
             <p>
-              I am focused on solving complex engineering challenges and optimizing system performance at every level. I am currently seeking a full-time software engineering role where I can apply my backend expertise to build robust systems and continue to grow professionally.
+              I sit at the intersection of software engineering and low-code platforms: I write production React and TypeScript, but I also understand how teams actually work inside tools like Airtable. That combination lets me build things that are both technically solid and genuinely adopted. I'm always open to interesting engineering problems and Airtable consulting conversations.
             </p>
           </div>
         </div>
 
         <div class="lg:w-1/2 w-full">
-          <!-- Skills Carousel -->
-          <div class="skills-carousel-container w-full">
-            <h3 class="text-2xl font-bold text-gray-900 mb-8 text-center">Skills & Technologies</h3>
-            
-            <div class="skills-carousel-wrapper">
-              <button class="carousel-nav-btn carousel-nav-left" id="carouselPrev" aria-label="Previous category">
-                <i data-lucide="chevron-left"></i>
-              </button>
-              
-              <div class="skills-carousel-card">
-                <div class="carousel-slide" id="carouselSlide">
-                  <!-- Programming Languages -->
-                  <div class="carousel-category active" data-category="0">
-                    <div class="category-header">
-                      <h4 class="category-title">Programming Languages</h4>
-                    </div>
-                    <div class="skills-grid">
-                      <div class="skill-item-carousel"><i class="devicon-python-plain colored text-4xl"></i><p>Python</p></div>
-                      <div class="skill-item-carousel"><i class="devicon-javascript-plain colored text-4xl"></i><p>JavaScript</p></div>
-                      <div class="skill-item-carousel"><i class="devicon-java-plain colored text-4xl"></i><p>Java</p></div>
-                      <div class="skill-item-carousel"><i class="devicon-mysql-plain colored text-4xl"></i><p>SQL</p></div>
-                      <div class="skill-item-carousel"><i class="devicon-html5-plain colored text-4xl"></i><p>HTML</p></div>
-                      <div class="skill-item-carousel"><i class="devicon-css3-plain colored text-4xl"></i><p>CSS</p></div>
-                      <div class="skill-item-carousel"><i class="devicon-cplusplus-plain colored text-4xl"></i><p>C++</p></div>
-                      <div class="skill-item-carousel"><i class="devicon-php-plain colored text-4xl"></i><p>PHP</p></div>
-                      <div class="skill-item-carousel"><i class="devicon-visualstudio-plain colored text-4xl"></i><p>VBA</p></div>
-                    </div>
-                  </div>
-                  
-                  <!-- Frameworks & Libraries -->
-                  <div class="carousel-category" data-category="1">
-                    <div class="category-header">
-                      <h4 class="category-title">Frameworks & Libraries</h4>
-                    </div>
-                    <div class="skills-grid">
-                      <div class="skill-item-carousel"><i class="devicon-react-original colored text-4xl"></i><p>React</p></div>
-                      <div class="skill-item-carousel"><i class="devicon-nodejs-plain colored text-4xl"></i><p>Node.js</p></div>
-                      <div class="skill-item-carousel"><i class="devicon-express-original colored text-4xl"></i><p>Express</p></div>
-                      <div class="skill-item-carousel"><i class="devicon-typescript-plain colored text-4xl"></i><p>TypeScript</p></div>
-                      <div class="skill-item-carousel"><i class="devicon-tailwindcss-plain colored text-4xl"></i><p>Tailwind</p></div>
-                      <div class="skill-item-carousel"><i class="devicon-react-original colored text-4xl"></i><p>Airtable SDK</p></div>
-                    </div>
-                  </div>
-                  
-                  <!-- Databases -->
-                  <div class="carousel-category" data-category="2">
-                    <div class="category-header">
-                      <h4 class="category-title">Databases</h4>
-                    </div>
-                    <div class="skills-grid">
-                      <div class="skill-item-carousel"><i class="devicon-mysql-plain colored text-4xl"></i><p>MySQL</p></div>
-                      <div class="skill-item-carousel"><i class="devicon-mongodb-plain colored text-4xl"></i><p>MongoDB</p></div>
-                      <div class="skill-item-carousel"><i class="devicon-postgresql-plain colored text-4xl"></i><p>PostgreSQL</p></div>
-                      <div class="skill-item-carousel"><i class="devicon-sqlite-plain colored text-4xl"></i><p>SQLite</p></div>
-                    </div>
-                  </div>
-                  
-                  <!-- Cloud & DevOps -->
-                  <div class="carousel-category" data-category="3">
-                    <div class="category-header">
-                      <h4 class="category-title">Cloud & DevOps</h4>
-                    </div>
-                    <div class="skills-grid">
-                      <div class="skill-item-carousel"><i class="devicon-amazonwebservices-plain colored text-4xl"></i><p>AWS</p></div>
-                      <div class="skill-item-carousel"><i class="devicon-docker-plain colored text-4xl"></i><p>Docker</p></div>
-                      <div class="skill-item-carousel"><i class="devicon-kubernetes-plain colored text-4xl"></i><p>Kubernetes</p></div>
-                      <div class="skill-item-carousel"><i class="devicon-git-plain colored text-4xl"></i><p>Git</p></div>
-                      <div class="skill-item-carousel"><i class="devicon-github-plain colored text-4xl"></i><p>GitHub</p></div>
-                    </div>
-                  </div>
-                </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-8 text-center lg:text-left">Skills &amp; Technologies</h3>
+
+          <div class="space-y-6">
+            <div>
+              <h4 class="text-xs font-semibold uppercase tracking-wide text-gray-500 mb-3">Languages</h4>
+              <div class="flex flex-wrap gap-3">
+                <span class="skill-chip"><i class="devicon-typescript-plain colored"></i> TypeScript</span>
+                <span class="skill-chip"><i class="devicon-javascript-plain colored"></i> JavaScript</span>
+                <span class="skill-chip"><i class="devicon-python-plain colored"></i> Python</span>
+                <span class="skill-chip"><i class="devicon-java-plain colored"></i> Java</span>
+                <span class="skill-chip"><i class="devicon-mysql-plain colored"></i> SQL</span>
+                <span class="skill-chip"><i class="devicon-cplusplus-plain colored"></i> C++</span>
+                <span class="skill-chip"><i class="devicon-php-plain colored"></i> PHP</span>
+                <span class="skill-chip"><i class="devicon-html5-plain colored"></i> HTML</span>
+                <span class="skill-chip"><i class="devicon-css3-plain colored"></i> CSS</span>
+                <span class="skill-chip"><i class="devicon-visualstudio-plain colored"></i> VBA</span>
               </div>
-              
-              <button class="carousel-nav-btn carousel-nav-right" id="carouselNext" aria-label="Next category">
-                <i data-lucide="chevron-right"></i>
-              </button>
             </div>
-            
-            <div class="carousel-pagination" id="carouselPagination">
-              <span class="pagination-dot active" data-index="0"></span>
-              <span class="pagination-dot" data-index="1"></span>
-              <span class="pagination-dot" data-index="2"></span>
-              <span class="pagination-dot" data-index="3"></span>
+
+            <div>
+              <h4 class="text-xs font-semibold uppercase tracking-wide text-gray-500 mb-3">Frameworks &amp; Libraries</h4>
+              <div class="flex flex-wrap gap-3">
+                <span class="skill-chip"><i class="devicon-react-original colored"></i> React</span>
+                <span class="skill-chip"><i class="devicon-nodejs-plain colored"></i> Node.js</span>
+                <span class="skill-chip"><i class="devicon-express-original colored"></i> Express</span>
+                <span class="skill-chip"><i class="devicon-tailwindcss-plain colored"></i> Tailwind</span>
+                <span class="skill-chip"><i data-lucide="table-2" class="w-4 h-4 text-accent"></i> Airtable Blocks SDK</span>
+              </div>
+            </div>
+
+            <div>
+              <h4 class="text-xs font-semibold uppercase tracking-wide text-gray-500 mb-3">Platforms &amp; Tools</h4>
+              <div class="flex flex-wrap gap-3">
+                <span class="skill-chip"><i data-lucide="table-2" class="w-4 h-4 text-accent"></i> Airtable</span>
+                <span class="skill-chip"><i class="devicon-vercel-original"></i> Vercel</span>
+                <span class="skill-chip"><i class="devicon-figma-plain colored"></i> Figma</span>
+                <span class="skill-chip"><i class="devicon-git-plain colored"></i> Git</span>
+                <span class="skill-chip"><i class="devicon-github-plain colored"></i> GitHub</span>
+                <span class="skill-chip"><i class="devicon-docker-plain colored"></i> Docker</span>
+                <span class="skill-chip"><i class="devicon-kubernetes-plain colored"></i> Kubernetes</span>
+                <span class="skill-chip"><i class="devicon-amazonwebservices-plain colored"></i> AWS</span>
+              </div>
+            </div>
+
+            <div>
+              <h4 class="text-xs font-semibold uppercase tracking-wide text-gray-500 mb-3">Databases</h4>
+              <div class="flex flex-wrap gap-3">
+                <span class="skill-chip"><i class="devicon-postgresql-plain colored"></i> PostgreSQL</span>
+                <span class="skill-chip"><i class="devicon-mysql-plain colored"></i> MySQL</span>
+                <span class="skill-chip"><i class="devicon-mongodb-plain colored"></i> MongoDB</span>
+                <span class="skill-chip"><i class="devicon-sqlite-plain colored"></i> SQLite</span>
+              </div>
             </div>
           </div>
         </div>
@@ -174,24 +219,10 @@
         <!-- Timeline Line -->
         <div class="absolute left-0 md:left-1/2 md:-translate-x-1/2 top-0 bottom-0 w-0.5 bg-purple-100 hidden md:block"></div>
 
-        <!-- Education & Claribase Row -->
+        <!-- Claribase -->
         <div class="experience-item relative flex flex-col md:flex-row md:justify-between items-start md:items-center w-full reveal">
-          <!-- Education (Left) -->
-          <div class="md:w-[45%] mb-4 md:mb-0">
-            <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-              <h3 class="text-xl font-bold text-gray-900">BSc in Computer Science</h3>
-              <p class="text-accent font-semibold mb-4">Wilfrid Laurier University | Sept 2020 – Aug 2025</p>
-              <ul class="text-gray-600 text-sm space-y-3">
-                <li class="flex items-start"><i data-lucide="graduation-cap" class="w-4 h-4 text-accent mt-1 mr-3 flex-shrink-0"></i> <span>Minor: User Experience Design </span></li>
-                <li class="flex items-start"><i data-lucide="graduation-cap" class="w-4 h-4 text-accent mt-1 mr-3 flex-shrink-0"></i> <span>Developed foundations in memory management, algorithm design & optimization, and database systems.</span></li>
-              </ul>
-            </div>
-          </div>
-          
-          <!-- Timeline Dot -->
+          <div class="md:w-[45%] mb-4 md:mb-0"></div>
           <div class="absolute left-[-9px] md:left-1/2 md:-translate-x-1/2 w-4 h-4 bg-accent rounded-full border-4 border-white shadow-sm z-10"></div>
-          
-          <!-- Claribase (Right) -->
           <div class="md:w-[45%]">
             <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
               <h3 class="text-xl font-bold text-gray-900">Junior Database Developer</h3>
@@ -234,6 +265,58 @@
           </div>
           <div class="absolute left-[-9px] md:left-1/2 md:-translate-x-1/2 w-4 h-4 bg-accent rounded-full border-4 border-white shadow-sm z-10"></div>
           <div class="md:w-[45%]"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education" class="py-24 bg-white">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-4xl font-bold mb-16 text-center text-gray-900 reveal">Education &amp; Certifications</h2>
+
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+        <!-- Degree -->
+        <div class="lg:col-span-3 reveal">
+          <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 h-full">
+            <h3 class="text-xl font-bold text-gray-900">BSc in Computer Science</h3>
+            <p class="text-accent font-semibold mb-4">Wilfrid Laurier University | Sept 2020 – Aug 2025</p>
+            <ul class="text-gray-600 text-sm space-y-3">
+              <li class="flex items-start"><i data-lucide="graduation-cap" class="w-4 h-4 text-accent mt-1 mr-3 flex-shrink-0"></i> <span>Minor: User Experience Design</span></li>
+              <li class="flex items-start"><i data-lucide="graduation-cap" class="w-4 h-4 text-accent mt-1 mr-3 flex-shrink-0"></i> <span>Developed foundations in memory management, algorithm design &amp; optimization, and database systems.</span></li>
+              <li class="flex items-start"><i data-lucide="graduation-cap" class="w-4 h-4 text-accent mt-1 mr-3 flex-shrink-0"></i> <span>Teaching Assistant for core CS courses (2021–2022).</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Certifications -->
+        <div class="lg:col-span-2 space-y-4">
+          <h3 class="text-lg font-bold text-gray-900 reveal">Certifications</h3>
+
+          <div class="flex items-start gap-4 bg-white p-5 rounded-xl border border-gray-100 shadow-sm reveal">
+            <div class="icon-circle flex-shrink-0">
+              <i data-lucide="award"></i>
+            </div>
+            <div class="flex-grow min-w-0">
+              <p class="font-bold text-gray-900">Airtable Builder Certification</p>
+              <p class="text-sm text-gray-500">Airtable</p>
+            </div>
+            <span class="flex-shrink-0 text-xs font-semibold px-2.5 py-1 rounded-full border bg-green-50 text-green-700 border-green-200">Completed</span>
+          </div>
+
+          <div class="flex items-start gap-4 bg-white p-5 rounded-xl border border-gray-100 shadow-sm reveal">
+            <div class="icon-circle flex-shrink-0">
+              <i data-lucide="award"></i>
+            </div>
+            <div class="flex-grow min-w-0">
+              <p class="font-bold text-gray-900">Airtable Admin Certification</p>
+              <p class="text-sm text-gray-500">Airtable</p>
+            </div>
+            <span class="flex-shrink-0 text-xs font-semibold px-2.5 py-1 rounded-full border bg-purple-50 text-accent border-purple-200 flex items-center gap-1.5">
+              <span class="inline-block w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span>
+              In Progress
+            </span>
+          </div>
         </div>
       </div>
     </div>
@@ -339,7 +422,7 @@
     <div class="max-w-4xl mx-auto px-6 text-center">
       <h2 class="text-4xl font-bold mb-8 text-gray-900">Get In Touch</h2>
       <p class="text-lg text-gray-600 mb-12 max-w-xl mx-auto">
-        I'm currently seeking new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!
+        Whether it's a software engineering role, an Airtable project, or just a question — I'll get back to you.
       </p>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -394,13 +477,13 @@
       </div>
       
       <div class="w-full max-w-4xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
-        <iframe src="assets/Nabeel Shaikh FT Resume.pdf" width="100%" height="800" class="border-none"></iframe>
+        <iframe src="assets/Nabeel Shaikh FT Resume.pdf" width="100%" height="800" class="border-none" title="Nabeel Shaikh Resume PDF"></iframe>
       </div>
     </div>
   </section>
 
   <footer class="py-8 text-center text-gray-500 text-sm border-t border-gray-200 bg-white">
-    <p>© 2025 Nabeel Shaikh. Built with HTML, Tailwind CSS & JavaScript.</p>
+    <p>© 2026 Nabeel Shaikh. Built with HTML, Tailwind CSS &amp; JavaScript.</p>
   </footer>
 
   <script src="scripts.js"></script>

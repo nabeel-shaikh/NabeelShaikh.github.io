@@ -76,70 +76,57 @@ if (document.getElementById("particles-js")) {
   });
 }
 
-// Skills Carousel
-function initSkillsCarousel() {
-  const categories = document.querySelectorAll('.carousel-category');
-  const prevBtn = document.getElementById('carouselPrev');
-  const nextBtn = document.getElementById('carouselNext');
-  const dots = document.querySelectorAll('.pagination-dot');
-  
-  if (categories.length === 0) return; 
-  
-  let currentIndex = 0;
-  const totalCategories = categories.length;
+// Typewriter hero tagline
+function initTypewriter() {
+  const el = document.getElementById('typewriter');
+  if (!el) return;
 
-  function showCategory(index) {
-    categories.forEach(cat => cat.classList.remove('active'));
-    dots.forEach(dot => dot.classList.remove('active'));
-    
-    if (categories[index]) {
-      categories[index].classList.add('active');
-    }
-    if (dots[index]) {
-      dots[index].classList.add('active');
-    }
-    
-    currentIndex = index;
+  const phrases = [
+    'Software Engineer',
+    'React & TypeScript Developer',
+    'Airtable Builder',
+    'Full-Stack Problem Solver'
+  ];
+
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    el.textContent = phrases[0];
+    document.querySelector('.typewriter-cursor')?.remove();
+    return;
   }
 
-  function nextCategory() {
-    const nextIndex = (currentIndex + 1) % totalCategories;
-    showCategory(nextIndex);
-  }
+  let phraseIndex = 0;
+  let charIndex = 0;
+  let deleting = false;
 
-  function prevCategory() {
-    const prevIndex = (currentIndex - 1 + totalCategories) % totalCategories;
-    showCategory(prevIndex);
-  }
+  function tick() {
+    const phrase = phrases[phraseIndex];
 
-  if (nextBtn) nextBtn.addEventListener('click', nextCategory);
-  if (prevBtn) prevBtn.addEventListener('click', prevCategory);
-
-  dots.forEach((dot, index) => {
-    dot.addEventListener('click', () => showCategory(index));
-  });
-
-  document.addEventListener('keydown', (e) => {
-    const carouselContainer = document.querySelector('.skills-carousel-container');
-    if (carouselContainer) {
-      const rect = carouselContainer.getBoundingClientRect();
-      const isInViewport = rect.top >= 0 && rect.bottom <= window.innerHeight;
-      if (isInViewport && (e.key === 'ArrowLeft' || e.key === 'ArrowRight')) {
-        // e.preventDefault(); // Optional: prevent scroll
-        if (e.key === 'ArrowLeft') prevCategory();
-        else if (e.key === 'ArrowRight') nextCategory();
+    if (!deleting) {
+      charIndex++;
+      el.textContent = phrase.slice(0, charIndex);
+      if (charIndex === phrase.length) {
+        deleting = true;
+        setTimeout(tick, 1800);
+        return;
       }
+      setTimeout(tick, 70);
+    } else {
+      charIndex--;
+      el.textContent = phrase.slice(0, charIndex);
+      if (charIndex === 0) {
+        deleting = false;
+        phraseIndex = (phraseIndex + 1) % phrases.length;
+        setTimeout(tick, 400);
+        return;
+      }
+      setTimeout(tick, 40);
     }
-  });
+  }
 
-  showCategory(0);
+  tick();
 }
 
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initSkillsCarousel);
-} else {
-  initSkillsCarousel();
-}
+initTypewriter();
 
 if (typeof lucide !== 'undefined') {
   setTimeout(() => lucide.createIcons(), 100);
