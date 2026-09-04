@@ -16,17 +16,6 @@ html { scroll-behavior: smooth; }
 }
 
 /* Navbar */
-nav.scrolled {
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  background-color: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(8px);
-  transition: all 0.3s ease;
-}
-.dark nav.scrolled {
-  background-color: rgba(17, 24, 39, 0.95);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-}
-
 .nav-link {
   position: relative;
   color: #374151;
@@ -67,24 +56,6 @@ html.dark body {
 }
 
 /* Component Styles */
-.skill-card {
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  width: 130px; height: 130px;
-  border: 2px solid transparent; border-radius: 12px;
-  background-clip: padding-box; position: relative;
-  background-color: rgba(255, 255, 255, 0.5);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.skill-card::before {
-  content: ""; position: absolute; inset: 0; border-radius: 12px; padding: 2px;
-  background: linear-gradient(45deg, #7e22ce, #ec4899);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none;
-}
-.skill-card:hover { transform: translateY(-5px); box-shadow: 0 4px 15px rgba(126, 34, 206, 0.3); }
-.skill-card p { margin-top: 10px; color: #7e22ce; font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
-
 .contact-card {
   display: block; background-color: #fff; border: 1px solid #e5e7eb;
   padding: 1.5rem; border-radius: 1rem;
@@ -184,7 +155,7 @@ html.dark body {
 
 /* Bento Grid */
 .bento-tile {
-  background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 1rem; padding: 1.5rem;
+  background: #ffffff; border: 1px solid #e5e7eb; border-radius: 1rem; padding: 1.5rem;
   display: flex; flex-direction: column; justify-content: space-between;
   transition: all 0.3s ease;
 }
@@ -241,7 +212,8 @@ ul[data-lens].lens-visible { display: flex; flex-direction: column; gap: 0.75rem
 }
 .timeline-dot.dot-active {
   background-color: var(--accent);
-  transform: scale(1.25);
+  /* Must keep the -50% translate that centers the dot on the line, otherwise scale() replaces it */
+  transform: translateX(-50%) scale(1.25);
   box-shadow: 0 0 0 4px #f3e8ff; /* ring-purple-100 */
 }
 .dark .timeline-dot.dot-active {

@@ -22,7 +22,7 @@ const homeSection = document.getElementById('home');
 const navLinks = document.querySelectorAll('.nav-link');
 const sections = document.querySelectorAll('section');
 
-window.addEventListener('scroll', () => {
+function updateNavbar() {
   // Visibility logic: Show navbar after scrolling past Home
   if (homeSection) {
     const homeBottom = homeSection.offsetTop + homeSection.offsetHeight;
@@ -53,7 +53,10 @@ window.addEventListener('scroll', () => {
       link.classList.add('text-accent');
     }
   });
-});
+}
+
+window.addEventListener('scroll', updateNavbar, { passive: true });
+updateNavbar();
 
 // Particles.js configuration
 if (document.getElementById("particles-js")) {
