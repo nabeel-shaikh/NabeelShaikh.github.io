@@ -128,6 +128,116 @@ function initTypewriter() {
 
 initTypewriter();
 
+function updateExperienceAlternating() {
+  const visible = [...document.querySelectorAll('.experience-item')]
+    .filter(item => !item.classList.contains('lens-hidden'));
+  visible.forEach((item, index) => {
+    item.classList.toggle('alt-side', index % 2 === 1);
+  });
+}
+
+function initExperienceLens() {
+  const buttons = document.querySelectorAll('.lens-btn');
+  if (!buttons.length) return;
+  const saved = localStorage.getItem('exp-lens');
+  function apply(lens) {
+    buttons.forEach(b => {
+      const on = b.dataset.lens === lens;
+      b.classList.toggle('active', on);
+      b.setAttribute('aria-selected', on);
+    });
+    document.querySelectorAll('.experience-item').forEach(item => {
+      const lenses = (item.dataset.lenses || '').split(/\s+/).filter(Boolean);
+      item.classList.toggle('lens-hidden', !lenses.includes(lens));
+    });
+    document.querySelectorAll('[data-lens]').forEach(el => {
+      if (el.classList.contains('lens-btn')) return;
+      el.classList.toggle('lens-visible', el.dataset.lens === lens);
+    });
+    updateExperienceAlternating();
+    localStorage.setItem('exp-lens', lens);
+    document.dispatchEvent(new CustomEvent('lenschange', { detail: { lens } }));
+  }
+  buttons.forEach(b => b.addEventListener('click', () => apply(b.dataset.lens)));
+  apply(saved === 'airtable' ? 'airtable' : 'swe');
+}
+initExperienceLens();
+
+function initTimelineProgress() {
+  const timeline = document.getElementById('experienceTimeline');
+  const progress = document.getElementById('timelineProgress');
+  if (!timeline || !progress) return;
+
+  let ticking = false;
+
+  function visibleItems() {
+    return [...timeline.querySelectorAll('.experience-item')]
+      .filter(item => !item.classList.contains('lens-hidden'));
+  }
+
+  function updateProgress() {
+    const rect = timeline.getBoundingClientRect();
+    const timelineTop = rect.top + window.scrollY;
+    const timelineHeight = timeline.offsetHeight || 1;
+    const viewportCenter = window.scrollY + window.innerHeight / 2;
+    const raw = (viewportCenter - timelineTop) / timelineHeight;
+    const clamped = Math.max(0, Math.min(1, raw));
+    progress.style.height = `${clamped * 100}%`;
+    ticking = false;
+  }
+
+  function onScroll() {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(updateProgress);
+    }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
+  document.addEventListener('lenschange', () => {
+    updateProgress();
+    refreshDotObserver();
+  });
+  updateProgress();
+
+  let dotObserver = null;
+
+  function refreshDotObserver() {
+    if (dotObserver) dotObserver.disconnect();
+
+    const items = visibleItems();
+    const dots = items.map(item => item.querySelector('.timeline-dot')).filter(Boolean);
+
+    dots.forEach(dot => dot.classList.remove('dot-active'));
+    if (dots[0]) dots[0].classList.add('dot-active');
+
+    if (!items.length) return;
+
+    dotObserver = new IntersectionObserver((entries) => {
+      const intersecting = entries
+        .filter(e => e.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+      if (!intersecting.length) return;
+
+      const activeItem = intersecting[0].target;
+      dots.forEach(dot => dot.classList.remove('dot-active'));
+      const activeDot = activeItem.querySelector('.timeline-dot');
+      if (activeDot) activeDot.classList.add('dot-active');
+    }, { rootMargin: '-40% 0px -40% 0px', threshold: 0 });
+
+    items.forEach(item => dotObserver.observe(item));
+  }
+
+  refreshDotObserver();
+}
+initTimelineProgress();
+
+document.getElementById('themeToggle')?.addEventListener('click', () => {
+  const dark = document.documentElement.classList.toggle('dark');
+  localStorage.setItem('theme', dark ? 'dark' : 'light');
+});
+
 if (typeof lucide !== 'undefined') {
   setTimeout(() => lucide.createIcons(), 100);
 }
